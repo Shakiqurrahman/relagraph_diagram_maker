@@ -1,0 +1,125 @@
+
+@import "tailwindcss";
+
+/* Make dark: utilities follow next-themes data-theme */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ========================================
+   DARK THEME — DEFAULT
+======================================== */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-main: #020C1B;
+  --bg-sidebar: #031329;
+  --bg-card: #041831;
+  --bg-input: #061B35;
+  --border-default: #12365F;
+
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --highlight: #172554;
+
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+
+  --table-blue: #2563EB;
+  --table-green: #10B981;
+  --table-orange: #F59E0B;
+  --table-purple: #8B5CF6;
+
+  --sql-keyword: #C084FC;
+  --sql-string: #86EFAC;
+  --sql-type: #67E8F9;
+  --sql-comment: #64748B;
+  --sql-number: #FCD34D;
+}
+
+/* ========================================
+   LIGHT THEME
+======================================== */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-main: #F8FAFC;
+  --bg-sidebar: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-input: #F1F5F9;
+  --border-default: #E2E8F0;
+
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --highlight: #DBEAFE;
+
+  --success: #059669;
+  --warning: #D97706;
+  --danger: #DC2626;
+
+  --table-blue: #2563EB;
+  --table-green: #059669;
+  --table-orange: #D97706;
+  --table-purple: #7C3AED;
+
+  --sql-keyword: #7C3AED;
+  --sql-string: #15803D;
+  --sql-type: #0369A1;
+  --sql-comment: #64748B;
+  --sql-number: #B45309;
+}
+
+/* ========================================
+   TAILWIND CSS V4 THEME REGISTRATION
+======================================== */
+@theme inline {
+  --color-main: var(--bg-main);
+  --color-sidebar: var(--bg-sidebar);
+  --color-card: var(--bg-card);
+  --color-input: var(--bg-input);
+  --color-default: var(--border-default);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-highlight: var(--highlight);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --color-table-blue: var(--table-blue);
+  --color-table-green: var(--table-green);
+  --color-table-orange: var(--table-orange);
+  --color-table-purple: var(--table-purple);
+
+  --color-sql-keyword: var(--sql-keyword);
+  --color-sql-string: var(--sql-string);
+  --color-sql-type: var(--sql-type);
+  --color-sql-comment: var(--sql-comment);
+  --color-sql-number: var(--sql-number);
+}
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+@layer base {
+  body {
+    @apply min-h-screen bg-main text-text-primary antialiased;
+  }
+
+  * {
+    border-color: var(--border-default);
+  }
+}
